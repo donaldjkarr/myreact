@@ -12,7 +12,14 @@ var Child = React.createClass({
                 <div className="panel-heading panelBack">
                     <span className="glyphicon glyphicon-paperclip"> Results</span> 
                 </div>
-             <div id="our-results" className="panel-body"></div>
+             <div id="our-results" className="panel-body">
+                 {this.props.apiArticles.map(data => {
+                    <li>
+                        {item.props}
+                    </li>
+                     }
+                 )};
+             </div>
             </div>
         </div>
     );

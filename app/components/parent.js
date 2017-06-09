@@ -12,9 +12,15 @@ var Search = require("./search");
   
 var Parent = React.createClass({
 
+    getInitialState: function() {
+
+       return { apiArticles: [] };
+    },
+
     startSearch: function(query) {
         helpers.getSearch(query).then(function(response){
             console.log(response);
+            this.setState({apiArticles: response.data.response.docs}); 
         });
     },
 
@@ -36,7 +42,7 @@ var Parent = React.createClass({
 
         <Search startSearch={this.startSearch.bind(this)}/>
 
-        <Child/>
+        <Child apiArticles={this.state.apiArticles}/>
 
         <GrandChild/>
         
