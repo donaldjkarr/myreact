@@ -13,13 +13,13 @@ var GrandChild = React.createClass({
                 <div className="panel-heading panelBack">
                   <span className="glyphicon glyphicon-paperclip"> Saved</span> 
                 </div>
-             <div id="our-results" className="panel-body"></div>
+             <div id="SavedResults" className="panel-body"></div>
             </div>
         </div>
     );
   }
 });
 
-module.exports=GrandChild;
+module.exports = GrandChild;
 
 

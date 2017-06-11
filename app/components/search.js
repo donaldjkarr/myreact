@@ -56,7 +56,7 @@ var Search = React.createClass({
             <label htmlFor="endYear">End Year (Optional)</label>
             <input type="text" className="form-control" id="endYear" placeholder=""/>
             </div>
-            <button type="submit" id="searchButton" className="btn btn-default" onClick={this.handleSubmit.bind(this)}>Search</button>
+            <button type="submit" id="searchButton" className="btn btn-primary" onClick={this.handleSubmit.bind(this)}>Search</button>
             <button type="submit" id="clearButton" className="btn btn-danger">Clear Results</button>
         </form>
         </div>

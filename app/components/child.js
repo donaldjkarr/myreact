@@ -26,4 +26,4 @@ var Child = React.createClass({
   }
 });
 
-module.exports=Child;
+module.exports = Child;

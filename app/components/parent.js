@@ -34,9 +34,9 @@ var Parent = React.createClass({
                 <p>The World's Second Finest News Source</p>
             </div>
             <p>
-                <a className="btn btn-primary btn-lg" href="http://giphy.com/gifs/ohio-john-kasich-scotts-tots-uCxR4xD2XDfhK" target="_blank" role="button">Learn more</a>
-                <a className="btn btn-info btn-lg" href="http://giphy.com/gifs/ohio-john-kasich-scotts-tots-uCxR4xD2XDfhK" target="_blank" role="button">Learn more</a>
-                <a className="btn btn-success btn-lg" href="http://giphy.com/gifs/ohio-john-kasich-scotts-tots-uCxR4xD2XDfhK" target="_blank" role="button">Learn more</a>
+                <a id="funnyButton" className="btn btn-danger btn-lg" href="http://giphy.com/gifs/ohio-john-kasich-scotts-tots-uCxR4xD2XDfhK" target="_blank" role="button">Don't Press</a>
+                <a id="otherhButton" className="btn btn-primary btn-lg" href="#" role="button">Search</a>
+
             </p>
         </div>
 
@@ -44,7 +44,7 @@ var Parent = React.createClass({
 
         <Child apiArticles={this.state.apiArticles}/>
 
-        <GrandChild/>
+        <GrandChild savedArticles={this.state.savedArticles}/>
         
     </div>
     );
