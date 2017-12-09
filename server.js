@@ -3,7 +3,6 @@ var express = require("express");
 var mongoose = require("mongoose");
 var bluebird = require("bluebird");
 var bodyParser = require("body-parser");
-var routes = require("./routes/routes");
 
 // Set up a default port, configure mongoose, configure our middleware
 var PORT = process.env.PORT || 8888;
@@ -12,7 +11,6 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(__dirname + "/public"));
-app.use("/", routes);
 
 var db = process.env.MONGODB_URI || "mongodb://localhost/myReactApp";
 
@@ -28,12 +26,37 @@ mongoose.connect(db, function(error) {
   }
 });
 
-app.get("api/saved", function(req, res) {
+//import mongoose
+
+var Articles = require("./models/models.js");
+
+app.get("/api/saved", function(req, res) {
     Articles.find({}, function(err, data) {
         if (err) {
             console.log(err);
         } else {
-            res.join(data);
+            res.json(data);
+        }
+    });
+});
+
+app.post("/api/saved", function(req, res) {
+  console.log(req.body);
+    Articles.create(req.body, function(err, data) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.json(data);
+        }
+    });
+});
+
+app.delete("/api/saved/:_id", function(req, res) {
+    Articles.findByIdAndRemove(req.params._id, function(err, data) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.json(data);
         }
     });
 });

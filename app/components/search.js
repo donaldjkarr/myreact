@@ -17,7 +17,7 @@ var Search = React.createClass({
 
     handleSubmit: function(event) {
         event.preventDefault();
-        this.props.startSearch(this.state.searchTerms);
+        this.props.startSearch(this.state.searchTerm);
     },
 
   render: function() {
@@ -31,7 +31,7 @@ var Search = React.createClass({
         <form>
                 <div className="form-group">
                 <label htmlFor="searchTerm">Search Term</label>
-                <input type="text" className="form-control" id="searchTerm" placeholder="Search anything" value={this.state.searchTerm} onChange={this.updateState.bind(this)}/>
+                <input type="text" className="form-control" id="searchTerm" placeholder="Search anything" value={this.state.searchTerm} onChange={this.updateState}/>
                 </div>
             <div className="form-group">
             <label htmlFor="retrieveNumber">Number of Records to Retrieve</label>
@@ -56,7 +56,7 @@ var Search = React.createClass({
             <label htmlFor="endYear">End Year (Optional)</label>
             <input type="text" className="form-control" id="endYear" placeholder=""/>
             </div>
-            <button type="submit" id="searchButton" className="btn btn-primary" onClick={this.handleSubmit.bind(this)}>Search</button>
+            <button type="submit" id="searchButton" className="btn btn-primary" onClick={this.handleSubmit}>Search</button>
             <button type="submit" id="clearButton" className="btn btn-danger">Clear Results</button>
         </form>
         </div>

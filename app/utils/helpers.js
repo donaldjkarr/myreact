@@ -15,5 +15,14 @@ module.exports = {
       var nyt_url = "https://api.nytimes.com/svc/search/v2/articlesearch.json?";
       var base_url = nyt_url + api_key + "&q=" +  query;
       return axios.get(base_url);
-  }
+  },
+
+   showSaved: function() {
+      return axios.get("/api/saved");
+  },
+
+   delete: function(_id) {
+     return axios.delete(`api/saved/${_id}`);
+   }
 };
+
